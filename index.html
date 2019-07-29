@@ -53,21 +53,22 @@
 
     <script>
         function timer() {
-            let startTime = new Date('2019,4,27'); // 开始时间
-            let usedTime = new Date() - startTime; // 相差的毫秒数
-            var h = ~~(usedTime / 1000 / 60 / 60 % 24);
+            var start = new Date(1996, 7, 23); // 2015.7.2
+            var start = new Date(2019, 4, 27); // 2015.7.2
+            var t = new Date() - start;
+            var h = ~~(t / 1000 / 60 / 60 % 24);
             if (h < 10) {
                 h = "0" + h;
             }
-            var m = ~~(usedTime / 1000 / 60 % 60);
+            var m = ~~(t / 1000 / 60 % 60);
             if (m < 10) {
                 m = "0" + m;
             }
-            var s = ~~(usedTime / 1000 % 60);
+            var s = ~~(t / 1000 % 60);
             if (s < 10) {
                 s = "0" + s;
             }
-            document.getElementById('d').innerHTML = ~~(usedTime / (24 * 3600 * 1000));
+            document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
             document.getElementById('h').innerHTML = h;
             document.getElementById('m').innerHTML = m;
             document.getElementById('s').innerHTML = s;
