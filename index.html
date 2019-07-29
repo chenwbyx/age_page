@@ -53,10 +53,8 @@
 
     <script>
         function timer() {
-            let startTime = new Date('2019-4-27'); // 开始时间
-            let endTime = new Date(); // 结束时间
-            let usedTime = endTime - startTime; // 相差的毫秒数
-            let days = ~~(Math.floor(usedTime / (24 * 3600 * 1000))); // 计算出天数
+            let startTime = new Date('2019,4,27'); // 开始时间
+            let usedTime = new Date() - startTime; // 相差的毫秒数
             var h = ~~(usedTime / 1000 / 60 / 60 % 24);
             if (h < 10) {
                 h = "0" + h;
@@ -69,7 +67,7 @@
             if (s < 10) {
                 s = "0" + s;
             }
-            document.getElementById('d').innerHTML = ~~(days);
+            document.getElementById('d').innerHTML = ~~(usedTime / (24 * 3600 * 1000));
             document.getElementById('h').innerHTML = h;
             document.getElementById('m').innerHTML = m;
             document.getElementById('s').innerHTML = s;
