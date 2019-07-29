@@ -63,10 +63,10 @@
             let minutes = Math.floor(leavel2 / (60 * 1000)); // 计算剩余的分钟数
        		  let leavel3 = leavel2 % (60 * 1000)
        		  let sec = Math.floor(leavel3/(1000))
-            document.getElementById('d').innerHTML = days;
-            document.getElementById('h').innerHTML = hours;
-            document.getElementById('m').innerHTML = minutes;
-            document.getElementById('s').innerHTML = sec;
+            document.getElementById('d').innerHTML = "" + days;
+            document.getElementById('h').innerHTML = "" + hours;
+            document.getElementById('m').innerHTML = "" + minutes;
+            document.getElementById('s').innerHTML = "" + sec;
         }
        timer();
        setInterval(timer, 1000);
