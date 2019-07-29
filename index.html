@@ -53,25 +53,20 @@
 
     <script>
         function timer() {
-            var start = new Date(2019, 4, 27); // 2015.7.2
-            var t = new Date() - start;
-            var h = ~~(t / 1000 / 60 / 60 % 24);
-            if (h < 10) {
-                h = "0" + h;
-            }
-            var m = ~~(t / 1000 / 60 % 60);
-            if (m < 10) {
-                m = "0" + m;
-            }
-
-            var s = ~~(t / 1000 % 60);
-            if (s < 10) {
-                s = "0" + s;
-            }
-            document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
-            document.getElementById('h').innerHTML = h;
-            document.getElementById('m').innerHTML = m;
-            document.getElementById('s').innerHTML = s;
+            let startTime = new Date('2019-4-27'); // 开始时间
+            let endTime = new Date(); // 结束时间
+            let usedTime = endTime - startTime; // 相差的毫秒数
+            let days = Math.floor(usedTime / (24 * 3600 * 1000)); // 计算出天数
+            let leavel = usedTime % (24 * 3600 * 1000); // 计算天数后剩余的时间
+            let hours = Math.floor(leavel / (3600 * 1000)); // 计算剩余的小时数
+            let leavel2 = leavel % (3600 * 1000); // 计算剩余小时后剩余的毫秒数
+            let minutes = Math.floor(leavel2 / (60 * 1000)); // 计算剩余的分钟数
+       		let leavel3 = leavel2 % (60 * 1000)
+       		  let sec = Math.floor(leavel3/(1000))
+            document.getElementById('d').innerHTML = days;
+            document.getElementById('h').innerHTML = hours;
+            document.getElementById('m').innerHTML = minutes;
+            document.getElementById('s').innerHTML = sec;
         }
         timer();
         setInterval(timer, 1000);
